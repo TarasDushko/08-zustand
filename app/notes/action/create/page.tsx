@@ -29,11 +29,6 @@ export const metadata: Metadata = {
 export default async function CreateNote() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery({
-    queryKey: ["tags"],
-    queryFn: getTags,
-  });
-
   const dehydratedState = dehydrate(queryClient);
 
   return (
